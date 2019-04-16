@@ -1,14 +1,20 @@
 #parent {
+  float: left;
   height: 150px;
   width: 150px;
-  border: 1px solid blue;
-  perspective: 100px;
+  transform: perspective(150px) rotateY(30deg);
+  background: red;
+  position: relative;
+  left: 45px;
+  margin: 25px; 
 }
 
-#child {
-  position: absolute;
-  border: 1px solid black;
-  background: gray; 
-  transform: rotateX(45deg);
-  transform-style: preserve-3d;
+#parent2 {
+  float: left;
+  height: 150px;
+  width: 150px;
+  transform: perspective(150px) rotateY(-30deg);
+  background: blue;
+  position: relative;
+  margin: 25px; 
 }
