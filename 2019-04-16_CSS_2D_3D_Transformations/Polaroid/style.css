@@ -1,0 +1,22 @@
+body {
+    margin: 30px;
+    background-color: grey;
+  }
+  
+  div.polaroid {
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  
+  div.right {
+    /* float: left; */
+    transform: rotate(7deg);
+  }
+  
+  div.left {
+    /* float: left; */
+    transform: rotate(-8deg);
+  }

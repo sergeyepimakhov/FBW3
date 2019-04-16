@@ -1,0 +1,14 @@
+#parent {
+  height: 150px;
+  width: 150px;
+  border: 1px solid blue;
+  perspective: 100px;
+}
+
+#child {
+  position: absolute;
+  border: 1px solid black;
+  background: gray; 
+  transform: rotateX(45deg);
+  transform-style: preserve-3d;
+}
