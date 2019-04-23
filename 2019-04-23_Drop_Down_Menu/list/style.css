@@ -1,0 +1,16 @@
+.navbar {
+    display: inline;
+    background: gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+.dropdown {
+    float: left;
+}
