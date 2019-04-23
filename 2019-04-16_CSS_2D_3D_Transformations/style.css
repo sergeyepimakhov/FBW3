@@ -4,17 +4,13 @@
   width: 150px;
   transform: perspective(150px) rotateY(30deg);
   background: red;
-  position: relative;
-  left: 45px;
   margin: 25px; 
 }
 
-#parent2 {
+#child {
   float: left;
   height: 150px;
   width: 150px;
   transform: perspective(150px) rotateY(-30deg);
   background: blue;
-  position: relative;
-  margin: 25px; 
 }
