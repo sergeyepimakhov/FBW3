@@ -1,23 +1,23 @@
 a {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
   
 ul {
-    background: darkorange;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+  background: darkorange;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
   
 li {
-    color: #fff;
-    background: darkorange;
-    display: block;
-    float: left;
-    padding: 1rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
+  color: #fff;
+  background: darkorange;
+  display: block;
+  float: left;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
 }
   
 li a {
@@ -25,16 +25,15 @@ li a {
 }
 
 li:hover {
-    background: red;
-    cursor: pointer;
+  background: red;
+  cursor: pointer;
 }
 
 ul li ul {
-    background: orange;
-    position: absolute;
+  position: absolute;
   transition: all 0.5s ease;
   margin-top: 1rem;
-    left: 0;
+  left: 0;
   display: none;
 }
 
