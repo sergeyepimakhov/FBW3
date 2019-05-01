@@ -1,0 +1,15 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    grid-auto-rows: minmax(150px, auto);
+    background-color: darkblue;
+    padding: 10px;
+}
+
+.module {
+    background-color: blue; 
+    color: white;
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+}
