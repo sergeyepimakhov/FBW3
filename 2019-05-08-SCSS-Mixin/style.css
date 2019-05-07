@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1000px) {
+    .item {
+        width: 10%;
+        height: 10%;
+        background-color: blue;
+        margin: 10px;
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .item {
+        width: 20%;
+        height: 20%;
+        background-color: red;
+        margin: 10px;
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .item {
+        width: 30%;
+        height: 30%;
+        background-color: green;
+        margin: 10px;
+        float: left;
+    }
+}

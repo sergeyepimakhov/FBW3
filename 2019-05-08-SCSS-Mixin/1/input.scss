@@ -1,0 +1,57 @@
+@mixin flex {
+    // write the css here
+    display: -webkit-flex;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    margin: 5px;
+    padding: 5px;
+    color:white;
+}
+
+@mixin responsive-ratio($x,$y) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    padding-top: $padding;
+}
+
+// .col {
+//     @include flex;
+// }
+// .col {
+//     @include responsive-ratio(16, 9);
+// }
+@mixin css-triangle($color: red, $direction: down, $size: 100px, $position: absolute, $round: false){
+    // @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid green;
+        border-right: $size solid red;
+        border-top: $size solid blue;
+        border-bottom: $size solid blue;
+        //margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+.row {
+    @include css-triangle();
+}

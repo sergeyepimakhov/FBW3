@@ -1,0 +1,10 @@
+.row {
+  width: 0;
+  height: 0;
+  border-left: 100px solid green;
+  border-right: 100px solid red;
+  border-top: 100px solid blue;
+  border-bottom: 100px solid blue;
+}
+
+/*# sourceMappingURL=style.css.map */
