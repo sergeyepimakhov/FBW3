@@ -1,0 +1,30 @@
+$breakpoints: (
+    phone-only: 599px,
+    tablet-portrait-up: 992px
+);
+
+
+@mixin for-size($size) {
+    @if map-has-key($breakpoints, $size) {
+        @media (min-width: #{map-get($breakpoints, $size)}) {
+            @content;
+            &::before {
+                content: $size;
+            }
+          }
+    }
+  }
+
+.header-title {  
+    font-size: 2rem;  
+  
+    @include for-size('phone-only') {    
+        // font-size: 1rem; 
+        column-count: 1;
+    }
+
+    @include for-size('tablet-portrait-up') {    
+        // font-size: 2rem; 
+        column-count: 2;
+     }
+ }

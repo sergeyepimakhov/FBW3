@@ -1,0 +1,24 @@
+.header-title {
+  font-size: 2rem;
+}
+
+@media (min-width: 599px) {
+  .header-title {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .header-title::before {
+    content: "phone-only";
+  }
+}
+
+@media (min-width: 992px) {
+  .header-title {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .header-title::before {
+    content: "tablet-portrait-up";
+  }
+}
+/*# sourceMappingURL=media.2.css.map */

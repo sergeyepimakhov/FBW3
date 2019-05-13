@@ -1,0 +1,66 @@
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { 
+          @content; 
+          &::before {
+              content: $size;
+            }
+        }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) { 
+            @content; 
+            &::before {
+              content: $size;
+            } 
+        }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) { 
+            @content; 
+            &::before {
+              content: $size;
+            } 
+        }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { 
+          @content; 
+          &::before {
+              content: $size;
+            } 
+        }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) { 
+            @content; 
+            &::before {
+              content: $size;
+            }
+        }
+    }
+  }
+
+.header-title {  
+    font-size: 2rem;  
+  
+    @include for-size('phone-only') {    
+        // font-size: 1rem; 
+        column-count: 1;
+        &::before {
+            content: " :for-phone-only";
+        }
+    }
+
+    @include for-size('tablet-portrait-up') {    
+        // font-size: 2rem; 
+        column-count: 2;
+        &::before {
+         content: " :for-tablet-portrait-up";
+       }
+     }
+
+     @include for-size('tablet-landscape-up') {    
+        // font-size: 2rem; 
+        column-count: 3;
+        &::before {
+         content: " :for-tablet-landscape-up";
+       }
+     }
+ }

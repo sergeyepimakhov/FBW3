@@ -1,0 +1,35 @@
+.header-title {
+  font-size: 2rem;
+}
+
+@media (max-width: 599px) {
+  .header-title {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .header-title::before {
+    content: "for-phone-only";
+  }
+}
+
+@media (min-width: 600px) {
+  .header-title {
+    font-size: 1rem;
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .header-title::before {
+    content: "for-tablet-portrait-up";
+  }
+}
+
+@media (min-width: 900px) {
+  .header-title {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .header-title::before {
+    content: "for-tablet-landscape-up";
+  }
+}
+/*# sourceMappingURL=media.css.map */

@@ -1,0 +1,18 @@
+.arrow-up {
+  margin: 10px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid black;
+}
+
+.arrow-down {
+  margin: 10px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid red;
+}
+/*# sourceMappingURL=triangle.css.map */

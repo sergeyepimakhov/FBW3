@@ -1,0 +1,43 @@
+.header-title {
+  font-size: 2rem;
+}
+
+@media (max-width: 599px) {
+  .header-title {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .header-title::before {
+    content: " :for-phone-only";
+  }
+  .header-title::before {
+    content: "phone-only";
+  }
+}
+
+@media (min-width: 600px) {
+  .header-title {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .header-title::before {
+    content: " :for-tablet-portrait-up";
+  }
+  .header-title::before {
+    content: "tablet-portrait-up";
+  }
+}
+
+@media (min-width: 900px) {
+  .header-title {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .header-title::before {
+    content: " :for-tablet-landscape-up";
+  }
+  .header-title::before {
+    content: "tablet-landscape-up";
+  }
+}
+/*# sourceMappingURL=media.1.css.map */

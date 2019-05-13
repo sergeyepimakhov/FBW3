@@ -1,0 +1,56 @@
+// $breakpoints: (
+//     'small' : 40em,
+//     'medium': 64em,
+//     'large': 90em,
+//     'xlarge': 120em,
+//     'xxlarge': 120.063em
+// )
+
+// @mixin respond-to
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { 
+        font-size: 1rem;
+        @content; 
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+
+.header-title {  
+    font-size: 2rem;  
+  
+    @include for-phone-only {    
+        // font-size: 1rem; 
+        column-count: 1;
+        &::before {
+            content: "for-phone-only";
+        }
+    }
+
+    @include for-tablet-portrait-up {    
+        // font-size: 2rem; 
+        column-count: 2;
+        &::before {
+         content: "for-tablet-portrait-up";
+       }
+     }
+
+     @include for-tablet-landscape-up {    
+        // font-size: 2rem; 
+        column-count: 3;
+        &::before {
+         content: "for-tablet-landscape-up";
+       }
+     }
+ }
