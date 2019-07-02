@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date</title>
+</head>
+<body>
+    <!-- 
+         <p>Time Offset<input id="input"/></p>
+    -->
+    <button onclick="getCurrentDate()">Get Current Date</button>
+    <button onclick="getDateUTC()">Get Date in UTC</button>
+    <button onclick="getOffset()">Get Offset</button>
+    <p>Your current date:</p>
+    <p id="current-date"></p>
+    <p>Current date in UTC:</p>
+    <p id="utc-date"></p>
+    <p>Timezone offset:</p>
+    <p id="offset"></p>
+
+    
+
+    <script>
+        function getCurrentDate() {
+            // let input = document.getElementById("input").value;
+            let d = new Date();
+
+            document.getElementById("current-date").innerHTML = d;
+        }
+
+        function getDateUTC() {
+            let d = new Date();
+            
+            document.getElementById("utc-date").innerHTML = d.toUTCString();
+        }
+
+        function getOffset() {
+            let d = new Date();
+            
+            document.getElementById("offset").innerHTML = - (d.getTimezoneOffset() / 60);
+        }
+
+        //https://www.w3schools.com/js/js_dates.asp
+        //
+        //d = new Date();
+
+        // milliseconds after 1970
+        // new Date(milliseconds)
+        //d = new Date(0);
+        //d = new Date(1000);
+
+        // new Date(datestring)
+        // 1970-02-01T00:00:00.000Z Zulu Time (UTC)
+        // zero hour offset
+        // zulu time now 2h difference 
+        //new Date('1970-02-01T00:00:00.000Z');
+        //new Date('1970-02-01T00:00:00.000Z');
+
+        // new Date(year,month,date[,hour,minute,second,millisecond ])
+        //new Date(2017, 12, 1)
+
+        // getTimezoneOffset()
+        //var d = new Date("October 13, 2014 11:13:00");
+    </script>
+    
+</body>
+</html>
