@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validation</title>
+</head>
+<body>
+
+        <p>Name:<input id="name"></p>
+        <p>Email:<input id="email"></p>
+        <p>ZIP:<input id="zip"></p>
+        <select id = "country">
+                <option value = "-1" selected>[choose yours]</option>
+                <option value = "1">USA</option>
+                <option value = "2">UK</option>
+                <option value = "3">INDIA</option>
+             </select>
+        <button type="button" onclick="validate()">Submit</button>
+
+    <script>
+        function validate() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let zip = document.getElementById("zip").value;
+            let country = document.getElementById("country").value;
+
+            if (name == '') {
+                alert("Please provide name");
+                document.getElementById("name").focus();
+                return false;
+            }
+            else if(email == '' || !email.includes('@')) {
+                alert("Please provide email");
+                document.getElementById("email").focus();
+                return false;
+            }
+            else if(zip == '' || zip.length != 5) {
+                alert("Please provide ZIP");
+                document.getElementById("zip").focus();
+                return false;
+            }
+            else if(country == -1) {
+                alert("Please provide country");
+                document.getElementById("country").focus();
+                return false;
+            }
+
+            alert("Successfully submitted");
+
+            return true;
+
+            //console.log(name);
+            //console.log(email);
+            //console.log(zip);
+            //console.log(country);
+
+            // name is not null
+            // email is not null and contains @
+            // zip is 5
+            // country is choosen
+
+            document.getElementById("email").focus();
+
+        }
+
+        // try to put this to try catch
+    </script>
+    
+</body>
+</html>

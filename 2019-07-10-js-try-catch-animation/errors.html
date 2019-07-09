@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Errors</title>
+</head>
+
+<body>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+
+    <script>
+
+        // try {
+        //     console.log(myvar); // myvar is not defined
+        // } catch (err) {
+        //     console.log("There was an error");
+        //     console.error("Error name: " + err.name);
+        //     console.error("Error message: " + err.message);
+        // }
+
+        function myFunction() {
+            try {
+                let x = document.getElementById("myDummyId").value;
+                console.log(x);
+            }catch(err) {
+                console.error("Error name: " + err.name);
+                console.error("Error message: " + err.message);
+            }
+        }
+
+        // function myFunction() {
+        //     var message, x;
+        //     message = document.getElementById("p01");
+        //     message.innerHTML = "";
+        //     x = document.getElementById("demo").value;
+        //     try {
+        //         if (x == "") throw mew E"empty";
+        //         if (isNaN(x)) throw "not a number";
+        //         x = Number(x);
+        //         if (x < 5) throw "too low";
+        //         if (x > 10) throw "too high";
+        //         if (x == 0) throw "it's zero"
+        //     }
+        //     catch (err) {
+        //         message.innerHTML = "Input is " + err;
+        //     }
+            //finally {
+            //    message.innerHTML = "Result: " + x*100;
+            //}
+
+        // password validation. 
+        // }
+
+        // age validator above 18
+        //
+
+        // throw new Error('oops');
+
+        // division by zero
+
+        // list1 = [1, 2, 3];
+        // list2 = [2, 4, 6, 8];
+
+        // try {
+        //     for (let i = 0; i < list2.length; i++) {
+        //         console.log(list1[i]);
+        //         console.log(list2[i]);
+        //         console.log(isNaN((list1[i]/list2[i])));
+
+        //     }
+        // } catch (err) {
+        //     console.error(err.name);
+        //     console.error(err.message);
+        // }
+    </script>
+
+</body>
+
+</html>
