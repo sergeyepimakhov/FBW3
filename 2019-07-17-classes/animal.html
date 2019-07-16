@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Animal</title>
+</head>
+<body>
+
+<script>
+    class Pet {
+        constructor(name) {
+            this.name = name;
+        }
+
+        writeName() {
+            document.write("Pet name is " + this.name);
+        }
+
+        //get name() {
+        //    return this._name;
+        //}
+
+        //set name(x) {
+        //    this._name = x;
+        //}
+    }
+
+    class Cat extends Pet {
+        constructor(name, age) {
+            super(name);
+
+            this.age = age;
+        }
+
+        writeAge() {
+            document.write(` and it is ${this.age} years old`);
+        }
+
+        says() {
+            document.write(' and says MEOW')
+        }
+    }
+
+    // try 
+    // const c = new Cat("lolo", "12")
+    // c.name //works also
+    // c.age //works also
+
+    // try implement dog with "bow-wow"
+    // try to implement color
+    // try to implement function likes()
+</script>
+    
+</body>
+</html>

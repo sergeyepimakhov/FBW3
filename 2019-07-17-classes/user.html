@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class User</title>
+</head>
+<body>
+
+<script>
+    class User {
+        constructor(name) {
+            this.name = name;
+        }
+
+        greetUser() {
+            document.write("Hi User");
+        }
+    }
+
+    class Admin extends User {
+        constructor(name, category) {
+            super(name);
+
+            this.category = category; // "Home and living"
+        }
+
+        getCategory(){
+            return this.category;
+        }
+
+        changeCategory(x) {
+            this.category = x
+        }
+    }
+
+    class Viewer extends User {
+        constructor(name, ip) {
+            super(name);
+
+            this.ip = ip; // "127.0.0.1"
+        }
+
+        getIp() {
+            return this.ip;
+        }
+    }
+
+    // sendLike
+    // sendDislike
+    // calculateRaputation
+</script>
+    
+</body>
+</html>
