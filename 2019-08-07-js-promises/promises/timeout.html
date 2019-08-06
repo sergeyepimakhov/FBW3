@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timeout</title>
+</head>
+<body>
+
+<script>
+
+/_ ES5 _/
+var delay = 4000;
+
+// Promise
+var willIGetDBResponse = new Promise(
+    function (resolve, reject) {
+        if (delay < 3000) {
+            var response = {
+                username: 'johnsmith'
+            };
+                resolve(response); // fulfilled
+            
+        } else {
+            var reason = new Error('Timeout error');
+            
+            reject(reason); // rejected
+        }
+
+    }
+);
+
+// call our promise
+var sendRequest = function () {
+    willIGetDBResponse
+        .then(function (fulfilled) {
+            // yay, you got a response
+            setTimeout(
+                function(){ 
+                    console.log(fulfilled);
+            // {username: 'johnsmith'}
+                }, delay);
+            
+        })
+        .catch(function (error) {
+            // oops, smt went wrong
+            setTimeout(
+                function(){ 
+                    console.error(error.message);
+                    // output: 'Timeout error'
+                }, delay);   
+        });
+};
+
+// sendRequest();
+
+</script>
+    
+</body>
+</html>

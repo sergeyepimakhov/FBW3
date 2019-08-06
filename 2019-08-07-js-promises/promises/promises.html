@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+<body>
+
+<script>
+
+/_ ES5 _/
+var isMomHappy = false;
+
+// Promise
+var willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            var phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // fulfilled
+        } else {
+            var reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+
+// call our promise
+var askMom = function () {
+    willIGetNewPhone
+        .then(function (fulfilled) {
+            // yay, you got a new phone
+            console.log(fulfilled);
+         // output: { brand: 'Samsung', color: 'black' }
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.error(error.message);
+         // output: 'mom is not happy'
+        });
+};
+
+// askMom();
+
+// 2nd promise
+var showOff = function (phone) {
+    return new Promise(
+        function (resolve, reject) {
+            var message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+
+            resolve(message);
+        }
+    );
+};
+
+// Alternative form
+//
+//var showOff = function (phone) {
+//    var message = 'Hey friend, I have a new ' +
+//                phone.color + ' ' + phone.brand + ' phone';
+//
+//    return Promise.resolve(message);
+//};
+
+var askMomAndShow = function () {
+    willIGetNewPhone
+    .then(showOff) // chain it here
+    .then(function (fulfilled) {
+            console.log(fulfilled);
+         // output: 'Hey friend, I have a new black Samsung phone.'
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.error(error.message);
+         // output: 'mom is not happy'
+        });
+};
+
+//askMomAndShow();
+
+</script>
+    
+</body>
+</html>

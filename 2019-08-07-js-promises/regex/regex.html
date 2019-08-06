@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regex</title>
+
+</head>
+
+<body>
+
+    <form>
+            <p>First Name:<input id="first-name"></p>
+            <p>Second Name:<input id="first-name"></p>
+            <p>Email:<input id="email"></p>
+            <p>ZIP:<input id="zip"></p>
+            <select id = "country">
+                    <option value = "-1" selected>[choose yours]</option>
+                    <option value = "1">USA</option>
+                    <option value = "2">UK</option>
+                    <option value = "3">INDIA</option>
+                 </select>
+            <p>Password:<input id="password"></p>
+            <button type="button" onclick="validate()">Submit</button>
+    </form>
+
+    <script>
+        function validate() {
+            var password = document.getElementById("password");
+            console.log(password)
+
+            // at least length 8
+            //var pattern = /^\w{8,}$/g
+
+            // at least one upper case
+            //var pattern = /^\w{8,}[A-Z]{1,}$/g
+
+            // at least one number
+            //var pattern = /^\w{8,}[A-Z0-9]{1,}$/g
+
+            // at least one special character
+            //var pattern = /^[a-z]+[A-Z]{1,}{8,}$/g
+
+            var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/g
+
+            if (password.value.match(pattern)) {
+                alert("Successfully submitted")
+            }
+            else {
+                password.focus();
+            }
+
+            //strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+            //Above you can see the expression for validating a strong password. Let’s break down what it is doing.
+            //RegEx	Description
+            //^	The password string will start this way
+            //(?=.*[a-z])	The string must contain at least 1 lowercase alphabetical character
+            //(?=.*[A-Z])	The string must contain at least 1 uppercase alphabetical character
+            //(?=.*[0-9])	The string must contain at least 1 numeric character
+            //(?=.[!@#\$%\^&])	The string must contain at least one special character, but we are escaping reserved RegEx characters to avoid conflict
+            //(?=.{8,})	The string must be eight characters or longer
+        }
+
+        //var pat = /foo\s/g
+        //var str = "foo foo foo foo "
+        //str.match(pat) // Array(4)
+        //str.match(pat).length
+        //arr = str.match(pat)
+        //arr.length
+    </script>
+
+</body>
+
+</html>
