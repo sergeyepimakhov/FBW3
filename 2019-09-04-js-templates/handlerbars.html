@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Handlerbars</title>
+</head>
+
+<body>
+
+    <script id="handlebars-demo" type="text/x-handlebars-template">
+        <div>
+            My name is {{name}}. I am a {{occupation}}.
+        </div>
+    </script>
+
+    <script>
+
+        // Retrieve the template data from the HTML (jQuery is used here).
+        var template = $('#handlebars-demo').html();
+
+        // Compile the template data into a function
+        var templateScript = Handlebars.compile(template);
+
+        var context = { "name": "Epimakhov Sergey", "occupation": "developer" };
+
+        // html = 'My name is Ritesh Kumar. I am a developer.'
+        var html = templateScript(context);
+
+        // Insert the HTML code into the page
+        $(document.body).append(html);
+    </script>
+
+    <script id="handlebars-list" type="text/x-handlebars-template">
+        <ul>
+            {{#each people}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script>
+        // Retrieve the template data from the HTML (jQuery is used here).
+        var template = $('#handlebars-list').html();
+
+        // Compile the template data into a function
+        var templateScript = Handlebars.compile(template);
+
+        var context = { "people": ["Boris Johnson", "Will Smith"] };
+
+        // html = 'My name is Ritesh Kumar. I am a developer.'
+        var html = templateScript(context);
+
+        // Insert the HTML code into the page
+        $(document.body).append(html);
+    </script>
+
+    <script id="handlebars-object" type="text/x-handlebars-template">
+        <div class="entry">
+            <h1>{{title}}</h1>
+            <h2>By {{author.name}}</h2>
+            
+            <div class="body">
+                {{body}}
+            </div>
+        </div>
+    </script>
+
+    <script>
+        // Retrieve the template data from the HTML (jQuery is used here).
+        var template = $('#handlebars-object').html();
+
+        // Compile the template data into a function
+        var templateScript = Handlebars.compile(template);
+
+        var context = {
+            title: "My First Blog Post!",
+            author: {
+                id: 47,
+                name: "Yehuda Katz"
+            },
+            body: "My first post. Wheeeee!"
+        };
+
+        // html = 'My name is Ritesh Kumar. I am a developer.'
+        var html = templateScript(context);
+
+        // Insert the HTML code into the page
+        $(document.body).append(html);
+    </script>
+
+</body>
+
+</html>
