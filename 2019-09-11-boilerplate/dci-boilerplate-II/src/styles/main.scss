@@ -1,0 +1,96 @@
+// This is where your styles can go, import any other scss or css files here or write your own style directly below
+/*
+body {
+  background: #000;
+}
+*/
+
+#top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80%;
+  /* background: -webkit-linear-gradient(red, orange); */
+  /* For Safari 5.1 to 6.0 */
+  /* background: -o-linear-gradient(red, orange); */
+  /* For Opera 11.1 to 12.0 */
+  /* background: -moz-linear-gradient(red, orange); */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, orange);
+  /* Standard syntax */
+}
+
+#bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+
+  background: linear-gradient( black, darkred);
+  /*background: -webkit-linear-gradient(#080405, #5f1105);*/
+  /* For Safari 5.1 to 6.0 */
+  //background: -o-linear-gradient(#080405, #5f1105);
+  /* For Opera 11.1 to 12.0 */
+  //background: -moz-linear-gradient(#080405, #5f1105);
+  /* For Firefox 3.6 to 15 */
+  //background: linear-gradient(#5f1105, );
+  /* Standard syntax */
+}
+
+/*
+#top {
+  top: 0;
+}
+
+#bottom {
+  bottom: 0;
+}
+*/
+
+div#sun {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 7em auto;
+  padding: 7em;
+  box-shadow: 0 0 60px 30px yellow, 0 0 100px 60px red, 0 0 140px 90px yellow;
+
+  position: absolute;
+  left: 40px;
+}
+
+/*
+.wrapper {
+  position: absolute;
+  width: 100%;
+  margin: 0em auto;
+  top: 0px;
+}*/
+
+#text {
+  position: absolute;
+  top: 60px;
+  left: 30%;
+  width: 500px;
+  height: 450px;
+  background: white;
+  z-index: 100;
+}
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../fonts/Rockit.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+#title {
+  position: absolute;
+  top: 20px;
+  left: 30%;
+  width: 500px;
+  height: 20px;
+  z-index: 100;
+  font-family: 'MyWebFont';
+}
