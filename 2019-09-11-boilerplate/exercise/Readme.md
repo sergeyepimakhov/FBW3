@@ -80,7 +80,24 @@ Deploy your code to **Github Pages**: this script creates a 'gh-pages' branch an
 npm run deploy
 ```
 
+## Page for your favorite song or poem.
 
+Create a page with the text of your favorite song or poem. 
+
+![screenshot](screenshot.png?raw=true)
+
+The possible html might have the following structure:
+
+0. 
+
+```html
+<main>
+...
+<div id="title"></div>
+<pre id="text"></pre>
+...
+</main>
+```
 
 1. Write the text of the song and the title in a separate js file and import it import in the ```ìndex.js```. Hint you might use
 multiline text representation using backquotes in JS2016 like this:
@@ -119,5 +136,3 @@ Then it can be used directly:
 ```
 
 4. Play around with styling.
-
-5. ![screenshot](screenshot.png?raw=true)
