@@ -13,11 +13,16 @@
    rm -rf .git
    ```
 
-3. Create a new github repo by yourself.
+3. Start a new git repository and make an initial commit
 
-4. Copy to you repo the boilerplate folder.
+   ```
+   git init
+   git add . && git commit -m "Initial commit"
+   git remote add origin git@github.com:yourname/your-repo.git 
+   git push origin master
+   ```
 
-5. Edit `package.json` to add you project's name
+4. Edit `package.json` to add you project's name
 
    `package.json`
 
@@ -29,7 +34,7 @@
    }
    ```
 
-6. Edit `index.html` to add your projects name
+5. Edit `index.html` to add your projects name
 
    ```html
    ...
@@ -40,13 +45,13 @@
    ...
    ```
 
-7. Install the dependencies
+6. Install the dependencies
 
    ```
    npm install
    ```
 
-8.  Have fun coding :D
+7.  Have fun coding :D
 
 ## Useful Commands
 
