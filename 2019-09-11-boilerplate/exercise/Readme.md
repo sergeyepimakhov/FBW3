@@ -17,7 +17,8 @@
 
    ```
    git init
-   git add . && git commit -m "Initial commit"
+   git add . 
+   git commit -m "Initial commit"
    git remote add origin git@github.com:yourname/your-repo.git 
    git push origin master
    ```
@@ -118,3 +119,5 @@ Then it can be used directly:
 ```
 
 4. Play around with styling.
+
+5. ![screenshot](screenshot.png?raw=true)
