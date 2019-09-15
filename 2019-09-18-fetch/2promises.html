@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback</title>
+</head>
+
+<body>
+
+    <script>
+
+/*function doSomething() {
+  return new Promise((resolve, reject) => {
+    console.log("It is done.");
+    // Succeed half of the time.
+    if (Math.random() > .5) {
+      resolve("SUCCESS")
+    } else {
+      reject("FAILURE")
+    }
+  })
+}
+
+const promise = doSomething(); 
+promise.then(successCallback, failureCallback);*/
+
+function doSomething() {
+  return new Promise((resolve, reject) => {
+    console.log("It is done 1.");
+    // Succeed half of the time.
+    if (Math.random() > .5) {
+      resolve("SUCCESS")
+    } else {
+      reject("FAILURE")
+    }
+  })
+}
+
+function doSomethingElse() {
+  return new Promise((resolve, reject) => {
+    console.log("It is done 2.");
+    // Succeed half of the time.
+    if (Math.random() > .5) {
+      resolve("SUCCESS")
+    } else {
+      reject("FAILURE")
+    }
+  })
+}
+
+function doThirdThing() {
+  return new Promise((resolve, reject) => {
+    console.log("It is done 3.");
+    // Succeed half of the time.
+    if (Math.random() > .5) {
+      resolve("SUCCESS")
+    } else {
+      reject("FAILURE")
+    }
+  })
+}
+
+
+const promise = doSomething(); 
+
+doSomething().then(function(result) {
+  return doSomethingElse(result);
+})
+.then(function(newResult) {
+  return doThirdThing(newResult);
+})
+.then(function(finalResult) {
+  console.log('Итоговый результат: ' + finalResult);
+})
+.catch();
+    </script>
+
+</body>
+
+</html>

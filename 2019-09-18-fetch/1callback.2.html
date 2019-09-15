@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback</title>
+</head>
+
+<body>
+
+    <script>
+        function some_1secs_function(value, callback) {
+            setTimeout(function () {
+                console.log("1sec")
+                callback();
+            }, 1000);     
+        }
+
+        function some_2secs_function(value, callback) {
+            setTimeout(function () {
+                console.log("2sec")
+                callback();
+            }, 2000); 
+        }
+
+        function some_3secs_function(value, callback) {
+            setTimeout(function () {
+                console.log("3sec")
+                callback();
+            }, 3000); 
+        }
+
+        some_1secs_function(1, function () {
+            some_2secs_function(2, function () {
+                some_3secs_function(3, function () {
+                    //All three functions have completed, in order.
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
