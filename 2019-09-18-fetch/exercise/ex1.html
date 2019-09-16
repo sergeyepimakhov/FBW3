@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+
+<body>
+
+    <script>
+
+        var users = [{
+            'username': 'admin',
+            'password': 'qwerty12345'
+        },
+        {
+            'username': 'user',
+            'password': 'user1_pass'
+        }
+        ];
+
+        function userLogin(givenUsername, givenPassword) {
+            return new Promise((resolve, reject) => {
+                console.log('user login...');
+                for (i = 0; i < users.length; i++) {
+                    if(users[i].username == givenUsername && users[i].password == givenPassword) {
+                        resolve(`User with username ${givenUsername} found`)
+                    }
+                }
+                reject(`User was not found`);
+            })
+        }
+
+        function fileDownload() {
+            return new Promise((resolve, reject) => {
+                console.log('getting link...');
+                let link = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+                resolve(link);
+            })
+        }
+
+        function redirectHome() {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(function () {
+                    console.log('redirecting...');
+                    location.replace("https://www.w3schools.com");
+                    resolve("successfully redirected");
+                }, 3000);
+                
+                
+            })
+        }
+
+        
+
+        function run() {
+            const promise = userLogin('admin', 'qwerty12345').then(function(fulfilled) {
+                console.log(fulfilled);
+                return fileDownload();
+            }).then(function(fulfilled) {
+                console.log(fulfilled);
+                return redirectHome();
+            });
+        }
+    </script>
+
+</body>
+
+</html>
