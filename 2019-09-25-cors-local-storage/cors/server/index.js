@@ -1,11 +1,11 @@
 var express = require('express');
 
 var app = express();
-//app.use(function(req, res, next) {
-//  res.header("Access-Control-Allow-Origin", "*");
-//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//  next();
-//});
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/', function (req, res) {
   var data = {
@@ -17,6 +17,12 @@ app.get('/', function (req, res) {
       "crow"
     ]
   };
+
+  var ip = req.ip;
+  if (ip.substr(0, 7) == "::ffff:") {
+    ip = ip.substr(7)
+  }
+  console.log(ip);
 
   res.json(data);
 });
