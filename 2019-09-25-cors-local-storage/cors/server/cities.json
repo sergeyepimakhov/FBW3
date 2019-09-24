@@ -1,0 +1,20 @@
+[
+    {
+        "state": "Baden-Württemberg",
+        "capital": "Stuttgart",
+        "population": "10,755,000",
+        "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Baden-W%C3%BCrttemberg.svg/50px-Flag_of_Baden-W%C3%BCrttemberg.svg.png"
+    },
+    {
+        "state": "Bavaria",
+        "capital": "Munich",
+        "population": "12,542,000",
+        "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Flag_of_Bavaria_%28striped%29.svg/50px-Flag_of_Bavaria_%28striped%29.svg.png"
+    },
+    {
+        "state": "Berlin",
+        "capital": "",
+        "population": "3,469,000",
+        "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_Berlin.svg/50px-Flag_of_Berlin.svg.png"
+    }
+]
