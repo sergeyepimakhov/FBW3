@@ -1,0 +1,52 @@
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav > li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.topnav > li a:hover {
+  background-color: #111;
+}
+
+ul.topics {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: lightgray;
+  width: 200px;
+  position: absolute;
+  top: 46px;
+  left: 150px;
+}
+
+.topics > li a {
+  display: block;
+  color: black;
+}
+
+.topics > li {
+  float: left;
+  width: 200px;
+}
+
+.topics > li a:hover {
+  background-color: gray;
+}
+
+
