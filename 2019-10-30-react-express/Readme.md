@@ -69,7 +69,7 @@ constructor(props) {
 }
 
 callAPI() {
-    fetch("http://localhost:9000/jokes")
+    fetch("http://localhost:9000/joke")
         .then(res => res.text())
         .then(res => this.setState({ response: res }));
 }
@@ -111,18 +111,8 @@ Line 18
 3. Choose randomly a joke
 4. Return back by pressing a form with button 
 
-May help:
+Might be useful:
 
     npm install --save child_process
 
-    exec('cat *.js bad_file | wc -l', (err, stdout, stderr) => {
-    if (err) {
-      // node couldn't execute the command
-      return;
-    }
-  
-    // the *entire* stdout and stderr (buffered)
-    console.log(`stdout: ${stdout}`);
-    console.log(`stderr: ${stderr}`);
-    res.send('respond with a joke');
-  });
+    https://nodejs.org/docs/v8.1.4/api/child_process.html#child_process_child_process_exec_command_options_callback

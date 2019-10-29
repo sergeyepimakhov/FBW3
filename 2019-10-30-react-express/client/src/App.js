@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:9000/jokes")
+    fetch("http://localhost:9000/joke")
       .then(res => res.text())
       .then(res => this.setState({ response: res }));
   }
