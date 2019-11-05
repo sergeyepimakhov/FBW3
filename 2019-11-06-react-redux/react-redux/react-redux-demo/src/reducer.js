@@ -2,11 +2,11 @@ const initialState = {
     x: 0,
 }
 
-export default function(state = initialState, action) {
+export default function reducer(state = initialState, action) {
     switch(action.type) {
         case 'INCREMENT_X':
             return {
-                ...state,
+                // ...state,
                 x: state.x + 1
             }
         default:
