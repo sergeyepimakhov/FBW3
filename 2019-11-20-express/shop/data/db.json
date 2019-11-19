@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "id": 0,
+      "title": "Samsung Galaxy A50 Smartphone (15,76 cm/6,2 Zoll, 128 GB Speicherplatz, 25 MP Kamera)",
+      "price": "279,99"
+    },
+    {
+      "id": 1,
+      "title": "LG K50 Smartphone (15,9 cm/6,26 Zoll, 32 GB Speicherplatz, 13 MP Kamera)",
+      "price": "149,99"
+    }
+  ],
+  "posts": [],
+  "user": {},
+  "count": 0,
+  "requests": []
+}

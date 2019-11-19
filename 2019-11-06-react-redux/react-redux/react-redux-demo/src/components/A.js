@@ -5,7 +5,7 @@ class A extends Component {
   render() {
     return (
       <div>
-        A, x = {this.props.x}
+        A, x = {this.props.xx}
         <button onClick={this.props.incrementX}>Increment X</button>
       </div>
     )
