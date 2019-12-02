@@ -47,12 +47,29 @@ router.get('/:id', function(req, res, next) {
 });
 
 /* POST records. */
-/*router.post('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
   // res.send('post request');
 
-  const record = req.body.record;
-  console.log(record);
-  res.status(200).send(record); // with status
-});*/
+  const title = req.body.title;
+  const price = req.body.price;
+  console.log(title);
+  console.log(price);
+
+  // Increment count
+  // db.update('count', n => n + 1)
+  // .write()
+
+  db.get('records').push({ 
+    // id: 3, 
+    title: title,
+    price: price
+  })
+  .write();
+  res.status(200).send('ok'); // with status
+});
+
+function count() {
+  // implement
+}
 
 module.exports = router;
