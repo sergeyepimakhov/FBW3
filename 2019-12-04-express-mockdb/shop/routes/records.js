@@ -8,7 +8,7 @@ const adapter = new FileSync('data/db.json')
 const db = low(adapter)
 
 // Set some defaults (required if your JSON file is empty)
-//db.defaults({ records: []})
+// db.defaults({ records: []})
 //  .write()
 
 // data = {'item': 'iPhone X'}
@@ -59,6 +59,7 @@ router.post('/', function(req, res, next) {
   // db.update('count', n => n + 1)
   // .write()
 
+  // find length of array and assign the id
   db.get('records').push({ 
     // id: 3, 
     title: title,

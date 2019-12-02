@@ -9,6 +9,14 @@
       "id": 1,
       "title": "LG K50 Smartphone (15,9 cm/6,26 Zoll, 32 GB Speicherplatz, 13 MP Kamera)",
       "price": "149,99"
+    },
+    {},
+    {
+      "title": "title"
+    },
+    {
+      "title": "mytitle",
+      "price": 100
     }
   ],
   "posts": [],

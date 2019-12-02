@@ -70,8 +70,12 @@ users -> records
 ```
 Post request
 ```
-curl -X POST -d '{"user": "user"}' -v -i 'http://localhost:3000/records'
+curl -d 'title=mytitle&price=100.00' -v -i 'http://localhost:3000/records'
 ```
+
+With JSON
+
+curl --header "Content-Type: application/json" -d '{"title": "mytitle", "price": 100.00}' -v -i 'http:localhost:3000/records'
 
 ```
 records/1
@@ -94,6 +98,10 @@ npm install lowdb
 ## Reference
 
 https://github.com/DigitalCareerInstitute/DS_record_shop
+
+## Bug with infinite loop
+
+https://stackoverflow.com/questions/44855839/nodemon-keeps-restarting-server
 
 
 
