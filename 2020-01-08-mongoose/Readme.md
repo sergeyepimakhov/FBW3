@@ -186,8 +186,6 @@ db.once('open', async function () {
 
 Create an Express application with mangoose. It should be able to create, find and remove objects.
 
-https://github.com/DigitalCareerInstitute/DS_record_shop/tree/stage/05-mongoose-controllers
-
 1. 
 
 ```bash
