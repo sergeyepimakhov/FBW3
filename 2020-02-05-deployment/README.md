@@ -15,3 +15,68 @@ The production environment is the environment provided by the server computer wh
     - Programming language runtime and framework libraries on top of which your website is written.
     - Web server infrastructure, possibly including a web server, reverse proxy, load balancer, etc.
     - Databases on which your website is dependent.
+
+## Config file
+
+Let's create create a new file config.js
+
+```js
+const { env } = process;
+
+const config = {
+  env: env.NODE_ENV || "development"
+};
+
+const devConfig = {
+  db: "mongodb://localhost:27017/password-login",
+  jwt_key: "iamaverysecretkey",
+  port: 5007
+};
+
+const prodConfig = {
+  db: env.MONGO_URI,
+  jwt_key: "iamaverysecretkey",
+  port: env.PORT
+};
+
+const currentConfig = config.env === "production" ? prodConfig : devConfig;
+
+module.exports = Object.assign({}, config, currentConfig);
+```
+
+app.js
+```js
+const env = require("./config/config.js");
+...
+//connectDB();
+connectDB(env.db);
+...
+// const PORT = process.env.PORT || 5007;
+const PORT = env.port;
+```
+
+db.js
+```js
+const connectDB = async (db) =>{
+...
+// const conn = await mongoose.connect(process.env.MONGO_URI , {
+const conn = await mongoose.connect(db, {
+...
+```
+
+passport.js
+```js
+const env = require("./config.js");
+...
+// secretOrKey: process.env.JWT_SECRET
+secretOrKey: env.jwt_key
+```
+
+sendEmail.js
+```js
+const env = require("./config.js");
+...
+
+```
+
+
