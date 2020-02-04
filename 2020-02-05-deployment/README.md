@@ -190,4 +190,8 @@ now logs passwort-jwt.now.sh --follow
 
 ## Reference
 
+- https://zeit.co/new
+- https://github.com/zeit/now
 - https://scotch.io/tutorials/easily-deploy-a-serverless-node-app-with-zeit-now
+- https://dev.to/almadireddy/full-stack-101-1-installing-node-zeit-now-and-deploying-5d70
+- https://medium.com/@joranquinten/how-to-deploy-a-nodejs-server-on-zeits-now-platform-e713207313d3
