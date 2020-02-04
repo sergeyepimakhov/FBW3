@@ -8,20 +8,24 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const cookieParser = require('cookie-parser')
+const path = require('path')
 
 
 
 // load env variables 
-dotenv.config({path : './config/config.env'});
-const env = require("./config/config.js");
+dotenv.config({path : './.env'});
+const env = require("./config.js");
 
 // passport config 
 require('./config/passport')(passport)
 // connect to MongoDB database
+console.log(env);
 connectDB(env.db);
 // EJS 
 app.use(expressLayouts);
 app.set('view engine' , 'ejs' )
+// setup views
+app.set("views", path.join(__dirname, "views"));
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));

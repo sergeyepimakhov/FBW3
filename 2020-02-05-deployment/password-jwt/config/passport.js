@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const JWTStrategy = require('passport-jwt').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const env = require("./config.js");
+const env = require("../config.js");
 
 // Load User Model
 const User = require('../models/User');

@@ -6,6 +6,7 @@ const { body, check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const sendEmail = require('../config/sendEmail');
 const crypto = require('crypto');
+const env = require("../config.js");
 
 
 
@@ -335,7 +336,7 @@ router.post('/login' , (req,res,next)=>{
 });
 
 router.get('/callback',(req,res,next)=>{
-    let token = jwt.sign({id:req.user.email},process.env.JWT_SECRET)
+    let token = jwt.sign({id:req.user.email},env.jwt_key)
     console.log('token: ',token)
 
     res.status(200)
